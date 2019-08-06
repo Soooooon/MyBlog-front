@@ -1,12 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import CheckLogin from "./components/CheckLogin";
+import BlogHome from "./containers/BlogHome";
+import {BrowserRouter as Router,Route} from "react-router-dom";
+import BlogText from "./containers/BlogCreateText";
+import WrappedBlogCreateText from "./containers/BlogCreateText";
+import {Provider} from "react-redux";
+import configureStore from "./redux";
+import * as path from "path";
+import WrappedBlogModifyText from "./containers/BlogModifyText";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export const store=configureStore();
+// console.log(store.getState());
+ReactDOM.render(
+    <Provider store={store}>
+        <Router>
+            <Route path='/home' component={BlogHome}/>
+            <Route path='/write' component={WrappedBlogCreateText}/>
+            <Route path='/modify/:id' component={WrappedBlogModifyText}/>
+        </Router>
+    </Provider>
+    ,
+    document.getElementById('root')
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
