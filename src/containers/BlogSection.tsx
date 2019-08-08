@@ -7,6 +7,7 @@ import "../less/section.less";
 import {store} from "../index";
 import {DELETE_BLOG} from "../redux/types";
 import {deleteBlog} from "../redux/actions";
+import Article from "../entity/Article";
 
 
 interface IProps extends RouteComponentProps{
@@ -21,9 +22,16 @@ interface IState {
 }
 // 这里添加交互的按钮
 export default class BlogSection extends React.Component<IProps,IState>{
+
+
+    article:Article=new Article();
+
     constructor(props:IProps) {
         super(props);
         this.state={};
+
+        this.article.assign(this.props);
+
     }
 
     render(){
@@ -41,15 +49,23 @@ export default class BlogSection extends React.Component<IProps,IState>{
     // 点击删除按钮
     delete(){
 
-        let that = this
-        // axios.defaults.baseURL='http://localhost:8080';
-        const url='api/myblog/delete/'+this.props.id;
-        axios.get(url)
-            .then(response=>{
-                console.log(response.data);
+        let that = this;
 
-                this.props.onChange()
-            })
+
+        that.article.httpDel(function (response: any) {
+            console.log(response.data);
+            that.props.onChange();
+        })
+
+
+        // axios.defaults.baseURL='http://localhost:8080';
+        // const url='api/aritcle/delete/'+this.props.id;
+        // axios.get(url)
+        //     .then(response=>{
+        //         console.log(response.data);
+        //
+        //         this.props.onChange()
+        //     })
 
         //window.location.reload();
         // store.dispatch(deleteBlog(this.props.id))

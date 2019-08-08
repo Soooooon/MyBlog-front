@@ -1,12 +1,7 @@
 import DateUtil from "../utils/DateUtil";
+import BaseEntity from "../base/BaseEntity";
 
-export default class TextEntity {
-
-
-    /**
-     * id
-     */
-    id:string|null=null;
+export default class Article extends BaseEntity{
 
     /**
      * 标题
@@ -23,18 +18,6 @@ export default class TextEntity {
      * 作者
      */
     author:string|null=null;
-
-    /**
-     * 创建时间
-     */
-    createTime:Date=new Date();
-
-
-    /**
-     * 修改时间
-     */
-    refreshTime:Date= new Date();
-
 
 
 

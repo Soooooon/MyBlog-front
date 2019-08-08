@@ -46,7 +46,7 @@ export default class BlogHome extends React.Component<IProps,IState>{
 
     refresh(){
         // console.log(store.getState().blogs)
-        axios.get('api/myblog/queryall')
+        axios.get('api/article/queryall')
             .then(response=>{
                 // store.dispatch(creaeteBlog(response.data))
                 // console.log(store.getState().blogs)

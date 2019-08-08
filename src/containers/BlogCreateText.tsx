@@ -3,7 +3,7 @@ import {Form,Button,Input,message as MessageBox} from "antd";
 import {ChangeEvent, FormEvent} from "react";
 import {RouteComponentProps} from "react-router-dom";
 import {FormComponentProps} from 'antd/lib/form/Form';
-import TextEntity from "../entity/TextEntity";
+import Article from "../entity/Article";
 import axios from "axios";
 import "../less/blogText.less"
 import qs from "qs"
@@ -25,7 +25,7 @@ const FormItem=Form.Item;
 
 class BlogCreateText extends React.Component<IProps,IState>{
 
-    textEntity:TextEntity=new TextEntity();
+    article:Article=new Article();
 
     constructor(props:IProps) {
         super(props);
@@ -81,35 +81,41 @@ class BlogCreateText extends React.Component<IProps,IState>{
         e.preventDefault();
 
         let that=this;
-        let textEntity=that.textEntity;
+        let article=that.article;
 
         this.props.form.validateFieldsAndScroll((err,fieldsValue)=>{
             if (!err){
-                textEntity.content=fieldsValue['content'];
-                textEntity.title=fieldsValue['title'];
+                article.content=fieldsValue['content'];
+                article.title=fieldsValue['title'];
 
-                textEntity.author='leon';
-                textEntity.createTime=new Date();
-                textEntity.refreshTime=new Date();
-
-
+                article.author='leon';
+                article.createTime=new Date();
+                article.refreshTime=new Date();
 
 
-                console.log('创建博客：'+textEntity);
-                // axios.defaults.baseURL='http://localhost:8080';
-                let params=qs.stringify(textEntity.getForm());
-                axios.post('/api/myblog/create',params,{
-                    headers:{
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
-                    .then(res=>{
 
-                        console.log('上传博客结果：'+res.data);
+                article.httpSave(function (response: any) {
+                    console.log('上传博客结果:',response.data);
+                    console.log('新建博客提交完成，准备跳回home');
+                    that.props.history.push('/home')
+                });
 
-                        console.log('新建博客提交完成，准备跳回home');
-                        this.props.history.push('/home');
-                    })
+
+                // console.log('创建博客：'+article);
+                // // axios.defaults.baseURL='http://localhost:8080';
+                // let params=qs.stringify(article.getForm());
+                // axios.post('/api/myblog/create',params,{
+                //     headers:{
+                //         'Content-Type': 'application/x-www-form-urlencoded'
+                //     }
+                // })
+                //     .then(res=>{
+                //
+                //         console.log('上传博客结果：'+res.data);
+                //
+                //         console.log('新建博客提交完成，准备跳回home');
+                //         this.props.history.push('/home');
+                //     })
             } else {
                 MessageBox.error(err);
             }
