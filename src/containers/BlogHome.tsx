@@ -7,7 +7,7 @@ import {RouteComponentProps} from "react-router-dom";
 import browerHistory from "react-router";
 import {createStore} from "redux";
 import {connect, Provider} from "react-redux";
-import "../less/home.css";
+import "../less/home.less";
 import {Blog, BlogState} from "../redux/types";
 import {store} from "../index";
 import {creaeteBlog} from "../redux/actions";
@@ -30,38 +30,66 @@ export default class BlogHome extends React.Component<IProps,IState>{
         this.state={
             blogs:[]
         };
-        axios.defaults.baseURL='http://localhost:8080';
+        // axios.defaults.baseURL='http://localhost:8080';
         this.handleClick=this.handleClick.bind(this);
     }
 
+    componentWillUnmount(): void {
+        console.log('BlogHome生命周期：componentWillUnmount')
+    }
+
     componentDidMount(): void{
+        console.log('BlogHome生命周期：componentDidMount')
+
+        this.refresh()
+    }
+
+    refresh(){
         // console.log(store.getState().blogs)
-        axios.get('/myblog/list')
+        axios.get('api/myblog/queryall')
             .then(response=>{
                 // store.dispatch(creaeteBlog(response.data))
                 // console.log(store.getState().blogs)
-                // console.log(response.data);
+                console.log('response返回:'+response.data.data);
                 // console.log(typeof response.data);
                 // console.log(typeof store.getState().blogs[0]);
                 this.setState(
-                    {blogs:response.data}
+                    {blogs:response.data.data}
                 )
+                // console.log(this.state.blogs)
             })
+    }
+
+    componentWillUpdate(nextProps: Readonly<IProps>, nextState: Readonly<IState>, nextContext: any): void {
+        console.log('Blog生命周期：componentWillUpdate')
+        // window.location.reload();
     }
 
 
     render(){
-
+        console.log('渲染BlogHome');
         return(
             <div className={'home'}>
 
-                <h1>欢迎来到我的博客</h1>
-                {this.state.blogs.map(item=>
-                    <BlogSection {...this.props} key={item.id} title={item.title} content={item.content} id={item.id}/>)}
+                <div className={'homeTitle'}>
+                    <div className={'homeTitleWelcome'}>
+                        <h1 >欢迎来到我的博客</h1>
+                    </div>
+                    <div className={'homeTitleButton'}>
+                        <Button type={'primary'} icon={'edit'} onClick={this.handleClick}>
+                            写博客
+                        </Button>
+                    </div>
+                </div>
 
-                 <Button type={'primary'} icon={'download'} onClick={this.handleClick}>
-                     写博客
-                 </Button>
+                <div className={'blogItems'}>
+                    {this.state.blogs.map(item=>
+                        <BlogSection {...this.props} key={item.id}
+                                     onChange={()=>{
+                                         this.refresh()
+                                     }}
+                                     title={item.title} content={item.content} id={item.id}/>)}
+                </div>
             </div>
         )
     }

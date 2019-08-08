@@ -5,6 +5,7 @@ import {RouteComponentProps} from "react-router-dom";
 import {FormComponentProps} from 'antd/lib/form/Form';
 import TextEntity from "../entity/TextEntity";
 import axios from "axios";
+import "../less/blogText.less"
 
 interface RouteParam{
     id:string
@@ -32,13 +33,13 @@ class BlogModifyText extends React.Component<IProps,IState>{
             title:null,
             content:null,
         };
-        axios.defaults.baseURL='http://localhost:8080';
+        // axios.defaults.baseURL='http://localhost:8080';
         this.textEntity.id=this.props.match.params.id
     }
 
     componentDidMount(): void {
-        console.log('拿博客');
-        axios.get('/myblog/article/'+this.props.match.params.id)
+        console.log('拿博客:');
+        axios.get('/api/myblog/article/'+this.props.match.params.id)
             .then(response=>{
                 let data=response.data.data;
 
@@ -63,7 +64,7 @@ class BlogModifyText extends React.Component<IProps,IState>{
         const {getFieldDecorator} =this.props.form;
 
         return(
-            <Form onSubmit={(e)=>this.handleSubmit(e)}>
+            <Form onSubmit={(e)=>this.handleSubmit(e)} className={'blogText'}>
                 写博客
                 <FormItem
                     {...formItemLayout}
@@ -110,18 +111,16 @@ class BlogModifyText extends React.Component<IProps,IState>{
                 textEntity.title=fieldsValue['title'];
 
                 textEntity.author='leon';
-                textEntity.createDate=new Date();
-                textEntity.refreshDate=new Date();
+                textEntity.createTime=new Date();
+                textEntity.refreshTime=new Date();
 
                 axios.defaults.baseURL='http://localhost:8080';
-                axios.post('/myblog/modify',textEntity)
+                axios.post('/api/myblog/modify',textEntity)
                     .then(res=>{
-                        console.log(textEntity);
-                        console.log(res.data)
+                        console.log('修改blog：'+textEntity);
+                        console.log('修改请求返回值:'+res.data);
+                        this.props.history.push('/home');
                     })
-
-                this.props.history.push('/home');
-
             } else {
                 MessageBox.error(err);
             }

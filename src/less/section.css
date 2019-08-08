@@ -3,12 +3,11 @@
   margin: 25px;
   border: 1px;
   box-shadow: 0 0 5px #100;
-  background: cornsilk;
+  background: honeydew;
   font-family: Georgia, Palatino, serif;
 }
-.section Button {
-  margin-left: 10px;
-  horiz-align: right;
-  margin-bottom: 5px;
+.section .sectionButton {
+  border: 1px dashed;
+  text-align: right;
 }
 /*# sourceMappingURL=section.css.map */

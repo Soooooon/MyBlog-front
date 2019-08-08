@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../less/blogItem.css"
+import "../less/blogItem.less"
 
 interface IProps {
     id:number;

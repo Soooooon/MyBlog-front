@@ -1,4 +1,24 @@
 .home {
-  text-align: center;
+  text-align: left;
+  font-size: 20px;
+  border: 1px dashed;
+  margin-left: 5px;
+  background: aliceblue;
+}
+.home .homeTitle {
+  border: 1px dashed;
+  margin-left: 25px;
+}
+.home .homeTitle .homeTitleWelcome {
+  border: 1px dashed;
+  text-align: left;
+}
+.home .homeTitle .homeTitleButton {
+  border: 1px dashed;
+  margin-right: 30px;
+  text-align: right;
+}
+.home .blogItems {
+  border: 1px dashed;
 }
 /*# sourceMappingURL=home.css.map */

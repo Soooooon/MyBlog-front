@@ -5,6 +5,8 @@ import {RouteComponentProps} from "react-router-dom";
 import {FormComponentProps} from 'antd/lib/form/Form';
 import TextEntity from "../entity/TextEntity";
 import axios from "axios";
+import "../less/blogText.less"
+import qs from "qs"
 
 interface RouteParam{
     id:string
@@ -39,35 +41,38 @@ class BlogCreateText extends React.Component<IProps,IState>{
         const {getFieldDecorator} =this.props.form;
 
         return(
-          <Form onSubmit={(e)=>this.handleSubmit(e)}>
-              写博客
-              <FormItem
-                  {...formItemLayout}
-                  label={'标题'}>
-                  {getFieldDecorator('title',{
-                      rules:[{message:'输入标题'}],
-                  })(
-                      <Input/>
-                  )}
-                  {/*<Input type='textarea' placeholder='输入标题' />*/}
-              </FormItem>
+            <div className={'blogText'}>
+                <Form onSubmit={(e)=>this.handleSubmit(e)}>
+                    写博客
+                    <FormItem className={'title'}
+                        {...formItemLayout}
+                        label={'标题'}>
+                        {getFieldDecorator('title',{
+                            rules:[{message:'输入标题'}],
+                        })(
+                            <Input className={'inputTitle'}/>
+                        )}
+                        {/*<Input type='textarea' placeholder='输入标题' />*/}
+                    </FormItem>
 
-              <FormItem
-                  {...formItemLayout}
-                  label='正文'>
+                    <FormItem className={'content'}
+                        {...formItemLayout}
+                        label='正文'>
 
-                  {getFieldDecorator('content',{
-                      rules:[{message:'随便写点什么'}],
-                  })(
-                      <Input type='textarea'/>
-                  )}
-                  {/*<Input type='textarea' placeholder='随便写点什么' onChange={(e)=>this.handleContentChange(e)}/>*/}
-              </FormItem>
+                        {getFieldDecorator('content',{
+                            rules:[{message:'随便写点什么'}],
+                        })(
+                            <Input className={'inputContent'} type='textarea'/>
+                        )}
+                        {/*<Input type='textarea' placeholder='随便写点什么' onChange={(e)=>this.handleContentChange(e)}/>*/}
+                    </FormItem>
 
-              <FormItem>
-                  <Button type={'primary'} htmlType={'submit'}>提交</Button>
-              </FormItem>
-          </Form>
+                    <FormItem className={'button'}>
+                        <Button type={'primary'} htmlType={'submit'}>提交</Button>
+                    </FormItem>
+                </Form>
+            </div>
+
         );
     }
 
@@ -84,18 +89,27 @@ class BlogCreateText extends React.Component<IProps,IState>{
                 textEntity.title=fieldsValue['title'];
 
                 textEntity.author='leon';
-                textEntity.createDate=new Date();
-                textEntity.refreshDate=new Date();
+                textEntity.createTime=new Date();
+                textEntity.refreshTime=new Date();
 
-                axios.defaults.baseURL='http://localhost:8080';
-                axios.post('/myblog/create',textEntity)
+
+
+
+                console.log('创建博客：'+textEntity);
+                // axios.defaults.baseURL='http://localhost:8080';
+                let params=qs.stringify(textEntity.getForm());
+                axios.post('/api/myblog/create',params,{
+                    headers:{
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
                     .then(res=>{
-                        console.log(textEntity);
-                        console.log(res.data)
+
+                        console.log('上传博客结果：'+res.data);
+
+                        console.log('新建博客提交完成，准备跳回home');
+                        this.props.history.push('/home');
                     })
-
-                this.props.history.push('/home');
-
             } else {
                 MessageBox.error(err);
             }
