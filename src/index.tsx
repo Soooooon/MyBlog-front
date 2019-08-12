@@ -9,6 +9,7 @@ import {Provider} from "react-redux";
 import configureStore from "./redux";
 import * as path from "path";
 import WrappedBlogModifyText from "./containers/BlogModifyText";
+import BlogList from "./containers/BlogList";
 
 export const store=configureStore();
 // console.log(store.getState());
@@ -17,7 +18,8 @@ ReactDOM.render(
         <Router>
             <Route path='/home' component={BlogHome}/>
             <Route path='/write' component={WrappedBlogCreateText}/>
-            <Route path='/modify/:id' component={WrappedBlogModifyText}/>
+            <Route path='/edit/:id' component={WrappedBlogModifyText}/>
+            <Route path={'/list'} component={BlogList} />
         </Router>
     </Provider>
     ,

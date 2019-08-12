@@ -1,5 +1,8 @@
 import DateUtil from "../utils/DateUtil";
 import BaseEntity from "../base/BaseEntity";
+import Filter from "../base/filter/Filter";
+import SortFilter from "../base/filter/SortFilter";
+import InputFilter from "../base/filter/InputFilter";
 
 export default class Article extends BaseEntity{
 
@@ -19,6 +22,22 @@ export default class Article extends BaseEntity{
      */
     author:string|null=null;
 
+
+    assign(obj: any) {
+        super.assign(obj);
+
+        this.assignEntity("createTime",Date);
+        this.assignEntity("refreshTime",Date);
+    }
+
+    getFilters(): Filter[] {
+        return [
+            ...super.getFilters(),
+            new SortFilter('文章ID','articleId'),
+            new InputFilter('标题','title'),
+            new InputFilter('内容','content'),
+        ]
+    }
 
 
     getForm(){

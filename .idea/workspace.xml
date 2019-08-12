@@ -2,30 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516b5b47-4146-4f5d-b66b-9cd1dae29321" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/base/Base.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/BaseEntity.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/HttpBase.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/ViewBase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/CheckFilter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/DateTimeFilter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/Filter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/HttpSelectionFilter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/InputFilter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/SelectionFilter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/SelectionFilterType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/SelectionOption.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/SortDirection.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/filter/SortFilter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/HttpUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/JsonUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ObjectUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/StringUtil.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/Pager.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/CheckFilterBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/DateTimeFilterBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/HttpSelectionFilterBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/InputFilterBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/SelectionFilterBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/base/filter/SortFilterBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SwiftComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/BlogList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/less/BlogList.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/less/bootstrap/variables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/less/bootstrap/variables.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/less/bootstrap/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/BrowserUtil.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/NumberUtil.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BlogCreateText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BlogCreateText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/BaseEntity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/BaseEntity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/CheckFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/CheckFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/DateTimeFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/DateTimeFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/Filter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/Filter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/HttpSelectionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/HttpSelectionFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/InputFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/InputFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SelectionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SelectionFilter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SelectionFilterType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SelectionFilterType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SelectionOption.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SelectionOption.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SortDirection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SortDirection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SortFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SortFilter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/BlogHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BlogHome.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BlogModifyText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BlogModifyText.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BlogSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BlogSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/TextEntity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/less/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/less/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/less/home.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/less/home.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/less/home.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/less/home.less" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +66,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/base/filter/filter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/base/filter" />
     <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,12 +78,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Code\myblog-front\src\base\filter\filter" />
-      <recent name="D:\Code\myblog-front\src\utils" />
       <recent name="D:\Code\myblog-front\src\base\filter" />
+      <recent name="D:\Code\myblog-front\src\components" />
+      <recent name="D:\Code\myblog-front\src\less" />
+      <recent name="D:\Code\myblog-front\src\utils" />
       <recent name="D:\Code\myblog-front\src\base" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Code\myblog-front\src\base\filter" />
+      <recent name="D:\Code\myblog-front\src\base" />
       <recent name="D:\Code\myblog-front\src" />
     </key>
   </component>
@@ -98,6 +116,10 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.npm start" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -113,7 +135,9 @@
       <workItem from="1564970043304" duration="29659000" />
       <workItem from="1565057145947" duration="26231000" />
       <workItem from="1565143624193" duration="6596000" />
-      <workItem from="1565229314637" duration="23384000" />
+      <workItem from="1565229314637" duration="24110000" />
+      <workItem from="1565318665414" duration="5036000" />
+      <workItem from="1565575235483" duration="20990000" />
     </task>
     <task id="LOCAL-00001" summary="save before ejecting">
       <created>1565090832860</created>
@@ -136,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565255000730</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完成部分迭代">
+      <created>1565266697199</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565266697199</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +190,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="save before ejecting" />
     <MESSAGE value="使用 Formdata" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用 Formdata" />
+    <MESSAGE value="完成部分迭代" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成部分迭代" />
   </component>
 </project>

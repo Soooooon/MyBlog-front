@@ -76,9 +76,20 @@ export default class BlogHome extends React.Component<IProps,IState>{
                         <h1 >欢迎来到我的博客</h1>
                     </div>
                     <div className={'homeTitleButton'}>
-                        <Button type={'primary'} icon={'edit'} onClick={this.handleClick}>
-                            写博客
-                        </Button>
+                        <span>
+                            <Button type={'primary'} icon={'detail'} onClick={()=>{
+                                this.props.history.push('list');
+                            }}>
+                                明细表
+                            </Button>
+                        </span>
+                        <span>
+                            <Button type={'primary'} icon={'edit'} onClick={this.handleClick}>
+                             写博客
+                            </Button>
+                        </span>
+
+
                     </div>
                 </div>
 

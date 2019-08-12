@@ -1,7 +1,7 @@
 import HttpBase from "./HttpBase";
 import ObjectUtil from "../utils/ObjectUtil";
-import Filter from "./filter/filter/Filter";
-import SortFilter from "./filter/filter/SortFilter";
+import Filter from "./filter/Filter";
+import SortFilter from "./filter/SortFilter";
 import StringUtil from "../utils/StringUtil";
 import SafeUtil from "../utils/SafeUtil";
 
@@ -39,17 +39,17 @@ export default class BaseEntity extends HttpBase{
     assign(obj:any){
        super.assign(obj);
 
-       this.assignEntity("createTime",Date);
-       this.assignEntity("refreshTime",Date);
+       // this.assignEntity("createTime",Date);
+       // this.assignEntity("refreshTime",Date);
     }
 
 
     //获取过滤器，必须每次动态生成，否则会造成filter逻辑混乱。
     getFilters(): Filter[] {
         return [
-            new SortFilter("排序", "orderId"),
-            new SortFilter("修改时间排序", "orderGmtModified"),
-            new SortFilter("创建时间排序", "orderGmtCreate"),
+            new SortFilter("排序", "id"),
+            new SortFilter("修改时间排序", "refreshTime"),
+            new SortFilter("创建时间排序", "createTime"),
         ]
     };
 
