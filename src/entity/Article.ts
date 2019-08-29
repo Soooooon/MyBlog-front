@@ -33,7 +33,7 @@ export default class Article extends BaseEntity{
     getFilters(): Filter[] {
         return [
             ...super.getFilters(),
-            new SortFilter('文章ID','articleId'),
+            // new SortFilter('文章ID','orderId'),
             new InputFilter('标题','title'),
             new InputFilter('内容','content'),
         ]

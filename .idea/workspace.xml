@@ -2,45 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516b5b47-4146-4f5d-b66b-9cd1dae29321" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/base/Pager.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/CheckFilterBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/DateTimeFilterBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/FilterPanel.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/HttpSelectionFilterBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/InputFilterBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/SelectionFilterBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/filter/SortFilterBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SwiftComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/BlogList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/less/BlogList.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/less/bootstrap/variables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/less/bootstrap/variables.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/less/bootstrap/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/BrowserUtil.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/NumberUtil.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/base/BaseEntity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/BaseEntity.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/CheckFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/CheckFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/DateTimeFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/DateTimeFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/Filter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/Filter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/HttpSelectionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/HttpSelectionFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/InputFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/InputFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SelectionFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SelectionFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SelectionFilterType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SelectionFilterType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SelectionOption.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SelectionOption.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SortDirection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SortDirection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/filter/filter/SortFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/filter/SortFilter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/BlogHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BlogHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Pager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Pager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/BlogList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/BlogList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Article.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/less/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/less/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/less/home.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/less/home.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/less/home.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/less/home.less" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +105,13 @@
       <workItem from="1565143624193" duration="6596000" />
       <workItem from="1565229314637" duration="24110000" />
       <workItem from="1565318665414" duration="5036000" />
-      <workItem from="1565575235483" duration="20990000" />
+      <workItem from="1565575235483" duration="28832000" />
+      <workItem from="1565683192006" duration="763000" />
+      <workItem from="1566461935638" duration="743000" />
+      <workItem from="1566527650212" duration="27000" />
+      <workItem from="1566910218780" duration="1068000" />
+      <workItem from="1566959120779" duration="3226000" />
+      <workItem from="1567045405383" duration="584000" />
     </task>
     <task id="LOCAL-00001" summary="save before ejecting">
       <created>1565090832860</created>
@@ -167,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565266697199</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="pager基本完成">
+      <created>1565604245123</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565604245123</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +172,7 @@
     <MESSAGE value="save before ejecting" />
     <MESSAGE value="使用 Formdata" />
     <MESSAGE value="完成部分迭代" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成部分迭代" />
+    <MESSAGE value="pager基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="pager基本完成" />
   </component>
 </project>

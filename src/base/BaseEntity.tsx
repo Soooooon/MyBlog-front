@@ -47,9 +47,9 @@ export default class BaseEntity extends HttpBase{
     //获取过滤器，必须每次动态生成，否则会造成filter逻辑混乱。
     getFilters(): Filter[] {
         return [
-            new SortFilter("排序", "id"),
-            new SortFilter("修改时间排序", "refreshTime"),
-            new SortFilter("创建时间排序", "createTime"),
+            new SortFilter("排序", "orderId"),
+            new SortFilter("修改时间排序", "orderRefreshTime"),
+            new SortFilter("创建时间排序", "orderCreateTime"),
         ]
     };
 

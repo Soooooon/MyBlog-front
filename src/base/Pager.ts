@@ -154,6 +154,7 @@ export default class Pager<T> extends HttpBase {
       let filter = this.filters[i]
       filter.reset()
     }
+
   };
 
   //重置排序过滤器
@@ -164,6 +165,7 @@ export default class Pager<T> extends HttpBase {
         filter.reset()
       }
     }
+    console.log('重置所有过滤器结果：',this.filters)
   };
 
 
@@ -267,8 +269,8 @@ export default class Pager<T> extends HttpBase {
   //获取所有的filter参数，键值对形式
   getParams(): { [s: string]: string | number } {
 
-    let filter=this.getFilter('articleId');
-    console.log(filter)
+    let filter=this.getFilter('orderId');
+    console.log('orderId filter:',filter)
 
     let params: { [s: string]: string | number } = {
       pageNum: this.pageNum,
@@ -393,9 +395,11 @@ export default class Pager<T> extends HttpBase {
       that.pageSize = pagination.pageSize
     }
 
+    console.log('!!!!!',sorter)
 
     //重置所有的sort
     that.resetSortFilters()
+    // console.log('that:',that)
     if (!StringUtil.isEmptyObject(sorter)) {
 
       //将变化的这个情况更新。
@@ -405,6 +409,7 @@ export default class Pager<T> extends HttpBase {
       that.setFilterValue(filterKey, sorter.order)
 
     }
+
 
     //直接去刷新
     that.httpList()

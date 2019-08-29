@@ -11,7 +11,7 @@ import FilterPanel from "../base/filter/FilterPanel";
 import DateUtil from "../utils/DateUtil";
 import format from 'date-fns/format'
 
-interface IProps extends RouteComponentProps{
+interface IProps extends RouteComponentProps {
 
 }
 
@@ -37,11 +37,11 @@ export default class BlogList extends React.Component<IProps, IState> {
         that.refresh();
 
     }
+
     search() {
         let that = this
         that.pager.pageNum = 1
 
-        console.log('点击重新排序',that.pager);
 
         that.refresh()
     }
@@ -53,8 +53,9 @@ export default class BlogList extends React.Component<IProps, IState> {
 
 
         //如果没有任何的排序，默认使用id倒序
-        if (!pager.getCurrentSortFilter()) {
-            pager.setFilterValue("articleId", SortDirection.DESC)
+        let currentSortFilter = pager.getCurrentSortFilter();
+        if (!currentSortFilter) {
+            pager.setFilterValue("orderId", SortDirection.DESC)
         }
 
 
@@ -75,22 +76,22 @@ export default class BlogList extends React.Component<IProps, IState> {
         let match = this.props.match;
         let pager = that.pager;
 
-        pager.data.map((article:Article)=>{
+        pager.data.map((article: Article) => {
 
             // @ts-ignore
             // console.log(format(article.createTime, 'YYYY-MM-DD HH:mm:ss'))
             // @ts-ignore
-            article.createTime=format(article.createTime, 'YYYY-MM-DD HH:mm:ss');
+            article.createTime = format(article.createTime, 'YYYY-MM-DD HH:mm:ss');
             // @ts-ignore
-            article.refreshTime=format(article.refreshTime, 'YYYY-MM-DD HH:mm:ss')
+            article.refreshTime = format(article.refreshTime, 'YYYY-MM-DD HH:mm:ss')
         })
 
         const columns: ColumnProps<Article>[] = [{
             title: 'ID',
             dataIndex: 'id',
-            sorter:true,
-            sortOrder:pager.getDefaultSortOrder('articleId'),
-            sortDirections:[SortDirection.DESCEND,SortDirection.ASCEND]
+            sorter: true,
+            sortOrder: pager.getDefaultSortOrder('orderId'),
+            sortDirections: [SortDirection.DESCEND, SortDirection.ASCEND],
         }, {
             title: '作者',
             dataIndex: 'author',
@@ -102,32 +103,44 @@ export default class BlogList extends React.Component<IProps, IState> {
             dataIndex: 'content',
         },
             {
-            title:'创建时间',
-            dataIndex:'createTime',
-        },
+                title: '创建时间',
+                dataIndex: 'createTime',
+                sorter: true,
+                sortOrder: pager.getDefaultSortOrder("articleCreateTime"),
+                sortDirections: [SortDirection.DESCEND, SortDirection.ASCEND],
+                render: (text: any, record: Article, index: number): React.ReactNode => (
+                    DateUtil.simpleDateTime(text)
+                )
+            },
             {
-                title:'修改时间',
-                dataIndex:'refreshTime',
-        },
+                title: '修改时间',
+                dataIndex: 'refreshTime',
+                sorter: true,
+                sortOrder: pager.getDefaultSortOrder("articleRefreshTime"),
+                sortDirections: [SortDirection.DESCEND, SortDirection.ASCEND],
+                render: (text: any, record: Article, index: number): React.ReactNode => (
+                    DateUtil.simpleDateTime(text)
+                )
+            },
             {
-            title:'操作',
-            dataIndex:'action',
-            render:(text:any,article:Article)=>(
-                <span>
-                    <Link to={'/edit/'+article.id} >
-                        <Icon className={'btn-action'} type={'edit'} />
+                title: '操作',
+                dataIndex: 'action',
+                render: (text: any, article: Article) => (
+                    <span>
+                    <Link to={'/edit/' + article.id}>
+                        <Icon className={'btn-action'} type={'edit'}/>
                     </Link>
 
-                    <Popconfirm title='确认删除该文章，删除后不可恢复？' onConfirm={(e:any)=>{
+                    <Popconfirm title='确认删除该文章，删除后不可恢复？' onConfirm={(e: any) => {
                         article.httpDel(function () {
                             that.refresh();
                         })
                     }} okText={'确认'} cancelText={'取消'}>
-                        <Icon title={'编辑'} className={'btn-action text-danger'} type='delete' />
+                        <Icon title={'编辑'} className={'btn-action text-danger'} type='delete'/>
                     </Popconfirm>
                 </span>
-            )
-        }];
+                )
+            }];
 
         return (
 
@@ -146,16 +159,16 @@ export default class BlogList extends React.Component<IProps, IState> {
                 </div>
 
                 <div>
-                    {/*{console.log(pager.filters)}*/}
-                    <FilterPanel filters={pager.filters} onChange={this.search.bind(this)} />
+                    <FilterPanel filters={pager.filters} onChange={this.search.bind(this)}/>
                 </div>
 
                 <Table className={'article-list'}
-                    rowKey={'id'}
-                    dataSource={pager.data}
-                    columns={columns}
-                    pagination={pager.getPagination()}
-                    onChange={pager.tableOnChange.bind(pager)}
+                       rowKey={'id'}
+                       loading={pager.loading}
+                       dataSource={pager.data}
+                       columns={columns}
+                       pagination={pager.getPagination()}
+                       onChange={pager.tableOnChange.bind(pager)}
                 />
             </div>
 
